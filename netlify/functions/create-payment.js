@@ -3,8 +3,11 @@ const checkoutNodeJssdk = require('@paypal/checkout-server-sdk');
 function environment() {
   const clientId = process.env.PAYPAL_CLIENT_ID;
   const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
-  
-  return new checkoutNodeJssdk.core.SandboxEnvironment(clientId, clientSecret);
+  const isProduction = process.env.NODE_ENV === 'production';
+
+  return isProduction
+    ? new checkoutNodeJssdk.core.LiveEnvironment(clientId, clientSecret)
+    : new checkoutNodeJssdk.core.SandboxEnvironment(clientId, clientSecret);
 }
 
 function client() {
@@ -15,7 +18,7 @@ exports.handler = async (event) => {
   try {
     const body = JSON.parse(event.body);
     const request = new checkoutNodeJssdk.orders.OrdersCreateRequest();
-    
+
     request.prefer("return=representation");
     request.requestBody({
       intent: "CAPTURE",
@@ -43,12 +46,13 @@ exports.handler = async (event) => {
     });
 
     const order = await client().execute(request);
-    
+
     return {
       statusCode: 200,
       body: JSON.stringify({ id: order.result.id })
     };
   } catch (err) {
+    console.error("PayPal Checkout Error:", err);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: err.message })
