@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARTHH Tweaks - Premium Gaming Optimization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AZw38sbuC5rYA_2UdihaozjrR9lBI-hGamk_cISUi3_oqU8Y6sieHidO_zwv2dTn7YZZBv3xBuT7CLxV&currency=USD"></script>
+    <style>
+        :root {
+            --primary: #0a0a16;
+            --primary-dark: #06060e;
+            --secondary: #ff3b3b;
+            --secondary-glow: #ff6b6b;
+            --accent: #00c8ff;
+            --accent-glow: #00e5ff;
+            --success: #00c853;
+            --light: #f5f5f7;
+            --dark: #121220;
+            --gray: #8a8a9e;
+            --card-bg: rgba(30, 30, 46, 0.7);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(circle at top left, #0c0c1a, #00000c);
+            color: var(--light);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Michroma', sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(10, 10, 22, 0.95);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 59, 59, 0.3);
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--secondary);
+            text-shadow: 0 0 15px var(--secondary-glow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .auth-btn {
+            background: rgba(255, 59, 59, 0.15);
+            border: 1px solid var(--secondary);
+            color: var(--light);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        
+        .auth-btn:hover {
+            background: rgba(255, 59, 59, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 59, 59, 0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 70px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(10, 10, 22, 0.7) 0%, rgba(6, 6, 14, 0.9) 70%);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+            line-height: 1.1;
+            text-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 span {
+            color: var(--secondary);
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: var(--light);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 59, 59, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s forwards;
+            opacity: 0;
+            z-index: 2;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 59, 59, 0.4);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--light);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .section-title h2 span {
+            color: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 5rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 59, 59, 0.2);
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
+        .service-card:nth-child(5) { animation-delay: 0.5s; }
+        .service-card:nth-child(6) { animation-delay: 0.6s; }
+        .service-card:nth-child(7) { animation-delay: 0.7s; }
+        .service-card:nth-child(8) { animation-delay: 0.8s; }
+        .service-card:nth-child(9) { animation-delay: 0.9s; }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 59, 59, 0.5);
+            box-shadow: 0 15px 40px rgba(255, 59, 59, 0.25);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        .service-header {
+            padding: 25px 25px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-card h3 {
+            color: var(--light);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .service-card h3 i {
+            color: var(--secondary);
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            min-height: 60px;
+        }
+        
+        .service-features {
+            padding: 20px 25px;
+        }
+        
+        .service-features ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .service-features ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--light);
+        }
+        
+        .service-features ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background: rgba(255, 59, 59, 0.1);
+            border: 1px solid var(--secondary);
+            color: var(--light);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .add-to-cart:hover {
+            background: rgba(255, 59, 59, 0.3);
+        }
+        
+        /* Cart Section */
+        .cart-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: var(--light);
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 0 20px rgba(255, 59, 59, 0.5);
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .cart-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 59, 59, 0.7);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+        
+        .cart-section {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 450px;
+            height: 100vh;
+            background: var(--primary-dark);
+            border-left: 1px solid var(--secondary);
+            padding: 30px;
+            transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cart-section.active {
+            right: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 59, 59, 0.3);
+        }
+        
+        .cart-header h3 {
+            color: var(--light);
+            font-size: 1.8rem;
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        
+        .close-cart:hover {
+            background: rgba(255, 59, 59, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding-right: 10px;
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .cart-item:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cart-item-price {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        
+        .quantity-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .quantity-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        
+        .remove-item:hover {
+            color: var(--secondary);
+            background: rgba(255, 59, 59, 0.1);
+        }
+        
+        .cart-summary {
+            border-top: 1px solid rgba(255, 59, 59, 0.3);
+            padding-top: 20px;
+        }
+        
+        .promo-box {
+            margin-bottom: 20px;
+        }
+        
+        .promo-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .promo-input input {
+            flex: 1;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 59, 59, 0.3);
+            color: var(--light);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .promo-input input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 10px rgba(255, 59, 59, 0.2);
+        }
+        
+        .apply-promo {
+            background: rgba(255, 59, 59, 0.1);
+            border: 1px solid var(--secondary);
+            color: var(--light);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .apply-promo:hover {
+            background: rgba(255, 59, 59, 0.3);
+        }
+        
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--light);
+        }
+        
+        .cart-total span:last-child {
+            color: var(--accent);
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            color: var(--light);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 59, 59, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 59, 59, 0.4);
+        }
+        
+        .checkout-btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        
+        .download-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 15px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 200, 83, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
+        }
+        
+        #paypal-button-container {
+            display: none;
+            margin-top: 20px;
+            min-height: 50px;
+            transition: var(--transition);
+        }
+        
+        /* Promo Tag */
+        .promo-tag {
+            background: var(--success);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+        
+        /* Partners Section */
+        .partners {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .partner-card {
+            text-align: center;
+            max-width: 300px;
+            transition: var(--transition);
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .partner-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary);
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(255, 59, 59, 0.3);
+            transition: var(--transition);
+        }
+        
+        .partner-card:hover .partner-img {
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
+        }
+        
+        .partner-name {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 59, 59, 0.3);
+        }
+        
+        .partner-role {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 20px;
+            transition: var(--transition);
+        }
+        
+        .faq-item:hover {
+            border-bottom-color: var(--secondary);
+        }
+        
+        .faq-question {
+            color: var(--light);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .faq-question i {
+            color: var(--accent);
+        }
+        
+        .faq-answer {
+            color: var(--gray);
+            padding-left: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 59, 59, 0.3);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h4 {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-column p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .payment-verified {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            color: var(--success);
+            font-weight: 500;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 59, 59, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 59, 59, 0); }
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cart-section {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .partners {
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .partner-img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                PARTHH <span>Tweaks</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="auth-btn">
+                <i class="fas fa-user"></i> Account
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>MAXIMIZE YOUR <span>GAMING PERFORMANCE</span></h1>
+            <p>Premium PC and console optimization services to boost your FPS, reduce input lag, and enhance your gaming experience without expensive hardware upgrades.</p>
+            <a href="#services" class="btn">
+                <i class="fas fa-arrow-down"></i> Explore Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="container" id="services">
+        <div class="section-title">
+            <h2>Our <span>Services</span></h2>
+            <p>Choose from our range of premium optimization services tailored for gamers and streamers</p>
+        </div>
+        
+        <div class="services">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-layer-group"></i> Foundation</h3>
+                    <div class="price">$25 USD</div>
+                    <p>Essential optimizations for all setups</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Improved FPS & Stability</li>
+                        <li>Lower Input Delay</li>
+                        <li>Disable Unnecessary Services</li>
+                        <li>Disable Windows Telemetry</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="Foundation" data-price="25">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 2 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-search"></i> PC Checkup</h3>
+                    <div class="price">$15 USD</div>
+                    <p>Complete system restoration</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Fix Windows Update Issues</li>
+                        <li>Restore After Driver Updates</li>
+                        <li>Remove Interfering Software</li>
+                        <li>System Health Report</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="PC Checkup" data-price="15">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-gamepad"></i> Console Booster</h3>
+                    <div class="price">$12 USD</div>
+                    <p>Optimize your console gaming</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Network Optimization</li>
+                        <li>System Performance Boost</li>
+                        <li>Reduced Input Lag</li>
+                        <li>Stability Improvements</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="Console Booster" data-price="12">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 4 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-video"></i> Stream Setup</h3>
+                    <div class="price">$45 USD</div>
+                    <p>Optimized settings for streamers</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Optimized Output Settings</li>
+                        <li>Audio Setup (Noise Removal)</li>
+                        <li>Remove Music from VOD</li>
+                        <li>Basic Mixer Setup</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="Stream Setup" data-price="45">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 5 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-desktop"></i> Data PC Setup</h3>
+                    <div class="price">$50 USD</div>
+                    <p>Dual PC streaming configuration</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Advanced Encoder Settings</li>
+                        <li>Audio Routing Solutions</li>
+                        <li>VOD Music Removal</li>
+                        <li>Capture Card/NDI Setup</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="Data PC Setup" data-price="50">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 6 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-network-wired"></i> Network Services</h3>
+                    <div class="price">$40 USD</div>
+                    <p>Improve your ping and network</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Latency and Stability Improvement</li>
+                        <li>PC and Console Optimization</li>
+                        <li>Professional Router Config</li>
+                        <li>Compatibility with PC Tweaks</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="Network Services" data-price="40">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 7 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-microchip"></i> OC Bundle</h3>
+                    <div class="price">$100 USD</div>
+                    <p>Full system overclocking</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Full CPU Overclocking</li>
+                        <li>Advanced RAM Tuning</li>
+                        <li>Comprehensive GPU OC</li>
+                        <li>Stability Optimization</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="OC Bundle" data-price="100">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 8 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-memory"></i> RAM Overclock</h3>
+                    <div class="price">$50 USD</div>
+                    <p>In-depth RAM optimization</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>RAM Frequency Enhancement</li>
+                        <li>Optimized Memory Timings</li>
+                        <li>Stability Assurance</li>
+                        <li>Compatibility Testing</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="RAM Overclock" data-price="50">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 9 -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-tachometer-alt"></i> CPU Overclock</h3>
+                    <div class="price">$35 USD</div>
+                    <p>Advanced CPU optimization</p>
+                </div>
+                <div class="service-features">
+                    <ul>
+                        <li>Targeted CPU Performance Boost</li>
+                        <li>Thermal Management Optimization</li>
+                        <li>Enhanced Responsiveness</li>
+                        <li>Stability Testing</li>
+                    </ul>
+                    <button class="add-to-cart" data-name="CPU Overclock" data-price="35">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="container" id="partners">
+        <div class="section-title">
+            <h2>Our <span>Partners</span></h2>
+            <p>Meet the talented team behind our optimization services</p>
+        </div>
+        
+        <div class="partners">
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Parthh" class="partner-img">
+                <div class="partner-name">Parthh</div>
+                <div class="partner-role">Lead Optimization Specialist</div>
+            </div>
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80" alt="CN Prince" class="partner-img">
+                <div class="partner-name">CN Prince</div>
+                <div class="partner-role">Network Optimization Expert</div>
+            </div>
+            <div class="partner-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="CN Terzo" class="partner-img">
+                <div class="partner-name">CN Terzo</div>
+                <div class="partner-role">Overclocking Specialist</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container" id="faq">
+        <div class="section-title">
+            <h2>Frequently <span>Asked Questions</span></h2>
+            <p>Find answers to common questions about our services and process</p>
+        </div>
+        
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-download"></i> How do I receive my tweaks?
+                </div>
+                <div class="faq-answer">
+                    After payment verification, a download button will appear in your cart. You'll also receive a download link via email and a Discord invite for installation support.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-shield-alt"></i> Is there a warranty?
+                </div>
+                <div class="faq-answer">
+                    Yes, we offer a 30-day warranty on all optimization services. Contact us on Discord for support if you experience any issues.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-laptop"></i> Multiple device usage?
+                </div>
+                <div class="faq-answer">
+                    Our licenses are per-device. For multiple devices, please purchase separate services or contact us for bulk discounts.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <i class="fas fa-tags"></i> How do promo codes work?
+                </div>
+                <div class="faq-answer">
+                    Enter promo codes during checkout. CRMSN gives 50% off any item (75% off bundles). CNTEAM gives 2 free products: Foundation and Console Booster.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container" id="contact">
+        <div class="section-title">
+            <h2>Contact <span>Us</span></h2>
+            <p>Have questions? Join our Discord server for immediate support</p>
+        </div>
+        
+        <div style="text-align: center; margin-bottom: 80px;">
+            <a href="https://discord.gg/your-invite-code" class="btn" target="_blank">
+                <i class="fab fa-discord"></i> Join Our Discord
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>PARTHH Tweaks</h4>
+                    <p>Premium PC optimization tools and performance tweaks for gamers, streamers, and power users.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#partners"><i class="fas fa-chevron-right"></i> Partners</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Discord Support</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Knowledge Base</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Warranty Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-verified">
+                    <i class="fas fa-shield-alt"></i> Secure Payments via PayPal
+                </div>
+                <p>&copy; 2023 PARTHH Tweaks. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart -->
+    <button class="cart-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </button>
+
+    <div class="cart-section">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="promo-box">
+                <div class="promo-input">
+                    <input type="text" placeholder="Enter promo code" class="promo-code">
+                    <button class="apply-promo">Apply</button>
+                </div>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$<span class="total-amount">0</span></span>
+            </div>
+            
+            <button class="checkout-btn" id="checkout-btn">
+                <span class="btn-text">PROCEED TO CHECKOUT</span>
+                <div class="spinner"></div>
+            </button>
+            
+            <div id="paypal-button-container"></div>
+            
+            <button class="download-btn" id="download-btn">
+                <i class="fas fa-download"></i> DOWNLOAD FILES
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Shopping Cart Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const cartBtn = document.querySelector('.cart-btn');
+            const cartSection = document.querySelector('.cart-section');
+            const closeCart = document.querySelector('.close-cart');
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartCount = document.querySelector('.cart-count');
+            const totalAmount = document.querySelector('.total-amount');
+            const applyPromoBtn = document.querySelector('.apply-promo');
+            const promoCodeInput = document.querySelector('.promo-code');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const downloadBtn = document.getElementById('download-btn');
+            const paypalButtonContainer = document.getElementById('paypal-button-container');
+            const spinner = document.querySelector('.spinner');
+            const btnText = document.querySelector('.btn-text');
+            
+            // State Variables
+            let cart = [];
+            let total = 0;
+            let paymentVerified = false;
+            let currentUser = null;
+            
+            // Product download URLs
+            const productDownloads = {
+                'Foundation': 'https://your-download-server.com/foundation.zip',
+                'PC Checkup': 'https://your-download-server.com/checkup.zip',
+                'Console Booster': 'https://your-download-server.com/console-booster.zip',
+                'Stream Setup': 'https://your-download-server.com/stream-setup.zip',
+                'Data PC Setup': 'https://your-download-server.com/data-pc.zip',
+                'Network Services': 'https://your-download-server.com/network-tweaks.zip',
+                'OC Bundle': 'https://your-download-server.com/oc-bundle.zip',
+                'RAM Overclock': 'https://your-download-server.com/ram-oc.zip',
+                'CPU Overclock': 'https://your-download-server.com/cpu-oc.zip'
+            };
+            
+            // Discord support link
+            const discordSupportLink = 'https://discord.gg/your-invite-code';
+            
+            // Toggle cart visibility
+            cartBtn.addEventListener('click', () => {
+                cartSection.classList.add('active');
+            });
+            
+            closeCart.addEventListener('click', () => {
+                cartSection.classList.remove('active');
+            });
+            
+            // Add to cart functionality
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const price = parseFloat(btn.getAttribute('data-price'));
+                    
+                    // Check if item already in cart
+                    const existingItem = cart.find(item => item.name === name);
+                    
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            name,
+                            price,
+                            quantity: 1,
+                            isPromo: false
+                        });
+                    }
+                    
+                    updateCart();
+                    cartSection.classList.add('active');
+                    
+                    // Animate cart button
+                    cartBtn.classList.add('animate__animated', 'animate__rubberBand');
+                    setTimeout(() => {
+                        cartBtn.classList.remove('animate__animated', 'animate__rubberBand');
+                    }, 1000);
+                    
+                    // Show notification
+                    showNotification(`Added ${name} to your cart`);
+                });
+            });
+            
+            // Apply promo code
+            applyPromoBtn.addEventListener('click', () => {
+                const promoCode = promoCodeInput.value.trim().toUpperCase();
+                let discountMessage = '';
+                
+                if (promoCode === 'CRMSN') {
+                    if (cart.length > 1) {
+                        // Apply 75% discount for bundles
+                        cart.forEach(item => {
+                            if (!item.isPromo) {
+                                item.discountedPrice = item.price * 0.25;
+                            }
+                        });
+                        discountMessage = '75% discount applied (CRMSN bundle discount)';
+                    } else if (cart.length === 1) {
+                        // Apply 50% discount for single item
+                        cart.forEach(item => {
+                            if (!item.isPromo) {
+                                item.discountedPrice = item.price * 0.5;
+                            }
+                        });
+                        discountMessage = '50% discount applied (CRMSN single item discount)';
+                    }
+                } else if (promoCode === 'CNTEAM') {
+                    // CNTEAM PROMO: Add 2 free products
+                    const freeProducts = ['Foundation', 'Console Booster'];
+                    let addedProducts = [];
+                    
+                    freeProducts.forEach(product => {
+                        if (!cart.some(item => item.name === product)) {
+                            cart.push({
+                                name: product,
+                                price: 0,
+                                discountedPrice: 0,
+                                quantity: 1,
+                                isPromo: true
+                            });
+                            addedProducts.push(product);
+                        }
+                    });
+                    
+                    if (addedProducts.length > 0) {
+                        discountMessage = `Added free: ${addedProducts.join(', ')} (CNTEAM promo)`;
+                    } else {
+                        discountMessage = 'CNTEAM products already added';
+                    }
+                } else if (promoCode) {
+                    discountMessage = 'Invalid promo code';
+                }
+                
+                updateCart();
+                
+                if (discountMessage) {
+                    showNotification(discountMessage);
+                }
+            });
+            
+            // Checkout functionality with PayPal
+            checkoutBtn.addEventListener('click', async () => {
+                if (cart.length === 0) {
+                    showNotification('Your cart is empty!', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                checkoutBtn.disabled = true;
+                btnText.textContent = 'Processing...';
+                spinner.style.display = 'block';
+                
+                try {
+                    // Create payment intent
+                    const response = await fetch('/.netlify/functions/create-payment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            items: cart,
+                            total: total,
+                            email: currentUser ? currentUser.email : 'customer@example.com'
+                        })
+                    });
+
+                    const data = await response.json();
+                    
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    // Initialize PayPal buttons
+                    paypal.Buttons({
+                        createOrder: () => data.id,
+                        onApprove: async (data) => {
+                            const verification = await fetch('/.netlify/functions/verify-payment', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ orderID: data.orderID })
+                            });
+                            
+                            const result = await verification.json();
+                            if (result.success) {
+                                // Payment complete
+                                paymentVerified = true;
+                                checkoutBtn.style.backgroundColor = '#00c853';
+                                btnText.textContent = 'Payment Verified!';
+                                downloadBtn.style.display = 'flex';
+                                
+                                // Show success notification
+                                showNotification('Payment successful! You can now download your files', 'success');
+                            } else {
+                                throw new Error('Verification failed');
+                            }
+                        },
+                        onError: (err) => {
+                            console.error('PayPal error:', err);
+                            checkoutBtn.disabled = false;
+                            btnText.textContent = 'PROCEED TO CHECKOUT';
+                            spinner.style.display = 'none';
+                            showNotification('Payment failed: ' + err.message, 'error');
+                        }
+                    }).render('#paypal-button-container');
+                    
+                    // Show PayPal buttons
+                    paypalButtonContainer.style.display = 'block';
+                    checkoutBtn.disabled = false;
+                    btnText.textContent = 'PAY WITH PAYPAL';
+                    spinner.style.display = 'none';
+
+                } catch (error) {
+                    console.error('Checkout error:', error);
+                    checkoutBtn.disabled = false;
+                    btnText.textContent = 'PROCEED TO CHECKOUT';
+                    spinner.style.display = 'none';
+                    showNotification('Error: ' + error.message, 'error');
+                }
+            });
+            
+            // Download functionality
+            downloadBtn.addEventListener('click', () => {
+                if (!paymentVerified) {
+                    showNotification('Please complete your purchase first', 'error');
+                    return;
+                }
+                
+                // Open download links for each product in the cart
+                let productsDownloaded = false;
+                
+                cart.forEach(item => {
+                    if (productDownloads[item.name]) {
+                        window.open(productDownloads[item.name], '_blank');
+                        productsDownloaded = true;
+                    }
+                });
+                
+                // Also open Discord support
+                window.open(discordSupportLink, '_blank');
+                
+                if (!productsDownloaded) {
+                    showNotification('No download links available for the products in your cart', 'error');
+                }
+            });
+            
+            // Update cart display
+            function updateCart() {
+                // Clear current items
+                cartItemsContainer.innerHTML = '';
+                
+                // Reset total
+                total = 0;
+                
+                // Add each item to cart display
+                cart.forEach(item => {
+                    // Calculate item total
+                    const itemPrice = item.discountedPrice !== undefined ? item.discountedPrice : item.price;
+                    const itemTotal = itemPrice * item.quantity;
+                    total += itemTotal;
+                    
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">
+                                ${item.name} 
+                                ${item.isPromo ? '<span class="promo-tag">FREE</span>' : ''}
+                                ${item.discountedPrice !== undefined && !item.isPromo ? '<span class="promo-tag">DISCOUNTED</span>' : ''}
+                            </div>
+                            <div class="cart-item-price">$${itemTotal.toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus" data-name="${item.name}">-</button>
+                                <span>${item.quantity}</span>
+                                <button class="quantity-btn plus" data-name="${item.name}">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item" data-name="${item.name}">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    cartItemsContainer.appendChild(cartItemElement);
+                });
+                
+                // Add event listeners to new elements
+                document.querySelectorAll('.remove-item').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const name = btn.getAttribute('data-name');
+                        cart = cart.filter(item => item.name !== name);
+                        updateCart();
+                        showNotification(`Removed ${name} from cart`);
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const name = btn.getAttribute('data-name');
+                        const item = cart.find(item => item.name === name);
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                        } else {
+                            cart = cart.filter(item => item.name !== name);
+                        }
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const name = btn.getAttribute('data-name');
+                        const item = cart.find(item => item.name === name);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                // Update total and cart count
+                totalAmount.textContent = total.toFixed(2);
+                cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+                
+                // Reset payment verification if cart changes
+                if (paymentVerified) {
+                    paymentVerified = false;
+                    checkoutBtn.disabled = false;
+                    checkoutBtn.style.backgroundColor = '';
+                    btnText.textContent = 'PROCEED TO CHECKOUT';
+                    downloadBtn.style.display = 'none';
+                    paypalButtonContainer.style.display = 'none';
+                    paypalButtonContainer.innerHTML = '';
+                }
+            }
+            
+            // Show notification function
+            function showNotification(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                // Position notification
+                notification.style.position = 'fixed';
+                notification.style.bottom = '30px';
+                notification.style.left = '50%';
+                notification.style.transform = 'translateX(-50%)';
+                notification.style.backgroundColor = type === 'error' ? '#ff3b3b' : '#00c853';
+                notification.style.color = '#fff';
+                notification.style.padding = '15px 30px';
+                notification.style.borderRadius = '8px';
+                notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.3)';
+                notification.style.zIndex = '9999';
+                notification.style.opacity = '0';
+                notification.style.transition = 'opacity 0.3s, transform 0.3s';
+                
+                // Animate in
+                setTimeout(() => {
+                    notification.style.opacity = '1';
+                    notification.style.transform = 'translateX(-50%) translateY(-10px)';
+                }, 10);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    notification.style.transform = 'translateX(-50%) translateY(20px)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+            
+            // Initialize animations on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.service-card, .section-title, .partner-card, .faq-item');
+                const windowHeight = window.innerHeight;
+                
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animated elements
+            document.querySelectorAll('.service-card, .section-title, .partner-card, .faq-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+            
+            // Run on load and scroll
+            window.addEventListener('load', animateOnScroll);
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
